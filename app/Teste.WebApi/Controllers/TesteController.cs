@@ -9,16 +9,12 @@ namespace Teste.WebApi.Controllers
     [ApiController]
     public class TesteController : ControllerBase
     {
-        private readonly IEnderecoService _enderecoService; 
-        public TesteController(IEnderecoService enderecoService)
-        {
-            _enderecoService = enderecoService;
-        }
-
         [HttpPost("buscar")]
-        public async Task<ActionResult<Endereco>> Buscar(EnderecoViewModel model)
+        public async Task<ActionResult<Endereco>> Buscar(
+            [FromServices] IEnderecoService enderecoService,
+            [FromBody] CepViewModel model)
         {
-            var endereco = await _enderecoService.Buscar(model.Cep);
+            var endereco = await enderecoService.Buscar(model.Cep);
             return endereco;
         }
     }
