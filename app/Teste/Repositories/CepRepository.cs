@@ -4,7 +4,7 @@ using Teste.Interfaces.Repositories;
 
 namespace Teste.Repositories
 {
-    public class EnderecoRepository:IEnderecoRepository
+    public class CepRepository:ICepRepository
     {
         public async Task<Endereco> Buscar(string cep)
         {

@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Teste
+﻿namespace Teste
 {
     public class Endereco
     {

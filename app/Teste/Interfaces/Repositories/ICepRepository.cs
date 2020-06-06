@@ -2,7 +2,7 @@
 
 namespace Teste.Interfaces.Repositories
 {
-    public interface IEnderecoRepository
+    public interface ICepRepository
     {
         Task<Endereco> Buscar(string cep);
     }

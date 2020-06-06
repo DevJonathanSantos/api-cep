@@ -3,9 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Teste.Interfaces.Repositories;
-using Teste.Interfaces.Services;
 using Teste.Repositories;
-using Teste.Services;
 
 namespace Teste.WebApi
 {
@@ -15,8 +13,7 @@ namespace Teste.WebApi
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddTransient<IEnderecoService, EnderecoService>();
-            services.AddTransient<IEnderecoRepository, EnderecoRepository>();
+            services.AddTransient<ICepRepository, CepRepository>();
             services.AddControllers();
 
         }
