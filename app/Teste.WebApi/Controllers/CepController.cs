@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 using Teste.Interfaces.Repositories;
 using Teste.WebApi.ViewModels;
@@ -10,6 +11,7 @@ namespace Teste.WebApi.Controllers
     public class CepController : ControllerBase
     {
         [HttpPost("buscar")]
+        [Authorize]
         public async Task<ActionResult<Endereco>> Buscar(
             [FromServices] ICepRepository enderecoService,
             [FromBody] CepViewModel model)
